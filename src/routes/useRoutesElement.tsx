@@ -6,6 +6,7 @@ import Timer from '../component/Timer/Timer'
 import { PATH } from './path'
 import { CurrencyExchange } from '../component/CurrencyExchange'
 import { University } from '../component/University'
+import Pe01 from '../component/PE01/Pe01'
 const useRoutesElement = () => {
   const routes = useRoutes([
     {
@@ -27,6 +28,10 @@ const useRoutesElement = () => {
     {
       path: PATH.UNIVERSITY,
       element: <University />,
+    },
+    {
+      path: PATH.PE01,
+      element: <Pe01 />,
     },
   ])
 

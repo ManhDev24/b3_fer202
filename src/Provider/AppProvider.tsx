@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AppContext from './Context'
+import axios from 'axios'
 
 const uData = {
   university: [
@@ -174,8 +175,41 @@ const uData = {
 }
 
 const AppProvider = ({ children }) => {
+  const [subject, setSubject] = useState([])
+  const [student, setStudent] = useState([])
+  const [studentDetail, setStudentDetail] = useState([])
+  const [searchStudentValue, setSearchStudentValue] = useState('')
+  const [studentSubject, setStudentSubject] = useState([])
+  const [searchSubject, setSearchSubject] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const ResSubject = await axios.get('http://localhost:9999/subjects')
+        setSubject(ResSubject.data)
+        const ResStudent = await axios.get('http://localhost:9999/students')
+        setStudent(ResStudent.data)
+        const ResStudentDetail = await axios.get('http://localhost:9999/student_details')
+        setStudentDetail(ResStudentDetail.data)
+        const ResStudentSubject = await axios.get('http://localhost:9999/students_subjetcs')
+        setStudentSubject(ResStudentSubject.data)
+      } catch (error) {}
+    }
+    fetchData()
+  }, [])
   const data = {
     uData,
+    subject,
+    setSubject,
+    student,
+    setStudent,
+    studentDetail,
+    setStudentDetail,
+    searchStudentValue,
+    setSearchStudentValue,
+    studentSubject,
+    setStudentSubject,
+    searchSubject,
+    setSearchSubject,
   }
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>
 }

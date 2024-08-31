@@ -3,4 +3,5 @@ export const PATH = {
   TIMER: '/timer',
   CURRENCY: '/currency',
   UNIVERSITY: '/university',
+  PE01: '/pe01',
 }
