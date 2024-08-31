@@ -8,13 +8,13 @@ const Homepage = () => {
       <div>
         <h1 className="text-4xl text-center text-red-600">Day 3 🔥</h1>
         <ul className="mt-10">
-          <li className="text-3xl text-red-500 text-center">
+          <li className="text-3xl text-red-500 text-center list-none">
             <Link to={PATH.TIMER}>Bài 1</Link>
           </li>
-          <li className="text-3xl text-red-500 text-center">
+          <li className="text-3xl text-red-500 text-center  list-none">
             <Link to={PATH.CURRENCY}>Bài 2</Link>
           </li>
-          <li className="text-3xl text-red-500 text-center">
+          <li className="text-3xl text-red-500 text-center  list-none">
             <Link to={PATH.UNIVERSITY}>Bài 3</Link>
           </li>
         </ul>
